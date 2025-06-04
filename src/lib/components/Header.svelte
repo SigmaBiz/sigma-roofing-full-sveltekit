@@ -1,5 +1,6 @@
 <script>
   import { Menu, X } from 'lucide-svelte';
+  import Button from './ui/Button.svelte';
   
   let isMobileMenuOpen = false;
   
@@ -74,12 +75,13 @@
           <p class="font-semibold text-gray-800">(405) 902-1826</p>
           <p class="text-sm text-gray-600">Free Estimates</p>
         </div>
-        <button 
+        <Button 
           on:click={() => scrollToSection('contact')}
-          class="bg-emerald-600 text-white hover:bg-emerald-700 px-4 py-2 rounded-md font-medium transition-colors"
+          variant="emerald"
+          size="default"
         >
           Get Quote
-        </button>
+        </Button>
       </div>
 
       <!-- Mobile Menu Button -->
@@ -137,12 +139,13 @@
           </button>
           <div class="pt-4 border-t">
             <p class="font-semibold text-gray-800">(405) 902-1826</p>
-            <button 
+            <Button 
               on:click={() => scrollToSection('contact')}
-              class="bg-emerald-600 text-white mt-2 w-full hover:bg-emerald-700 px-4 py-2 rounded-md font-medium transition-colors"
+              variant="emerald"
+              className="mt-2 w-full"
             >
               Get Quote
-            </button>
+            </Button>
           </div>
         </nav>
       </div>
