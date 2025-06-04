@@ -13,13 +13,13 @@
 
 <section 
   id="home" 
-  class="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 to-gray-800"
+  class="relative min-h-screen flex items-center hero-bg"
 >
   <div class="container mx-auto px-4 relative z-10">
     <div class="max-w-4xl mx-auto text-white text-center">
       <h1 class="font-bold text-4xl lg:text-6xl mb-6 leading-tight">
         <span class="text-white">Stand firm.</span>{" "}
-        <span class="text-emerald-500">Brave the storm.</span>{" "}
+        <span class="text-sigma-emerald">Brave the storm.</span>{" "}
         <span class="text-white">Serve with heart.</span>
       </h1>
       <p class="text-lg lg:text-xl mb-6 leading-relaxed text-gray-200 max-w-3xl mx-auto">
@@ -32,14 +32,14 @@
       </p>
       <div class="flex flex-col sm:flex-row justify-between space-y-4 sm:space-y-0 max-w-3xl mx-auto">
         <button
-          class="bg-emerald-600 text-white hover:bg-emerald-700 text-lg px-8 py-4 shadow-lg transform hover:scale-105 transition-transform w-full sm:w-64 rounded-md font-medium flex items-center justify-center"
+          class="bg-sigma-emerald text-white hover:bg-emerald-600 text-lg px-8 py-4 shadow-lg transform hover:scale-105 transition-transform w-full sm:w-64 rounded-md font-medium flex items-center justify-center"
           on:click={() => window.open("tel:(405)902-1826")}
         >
           <Phone size={20} class="mr-2" />
           Call (405) 902-1826
         </button>
         <button
-          class="bg-emerald-600 text-white hover:bg-emerald-700 text-lg px-8 py-4 shadow-lg transform hover:scale-105 transition-transform w-full sm:w-64 rounded-md font-medium"
+          class="bg-sigma-emerald text-white hover:bg-emerald-600 text-lg px-8 py-4 shadow-lg transform hover:scale-105 transition-transform w-full sm:w-64 rounded-md font-medium"
           on:click={scrollToContact}
         >
           Free Estimate

@@ -54,11 +54,11 @@
   });
 </script>
 
-<section class="py-20 bg-gray-900">
+<section class="py-20 bg-sigma-charcoal">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
       <h2 class="font-bold text-4xl text-white mb-4">Recent Projects</h2>
-      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+      <p class="text-xl text-gray-200 max-w-2xl mx-auto">
         Take a look at some of our recent roofing projects across Oklahoma. 
         Quality craftsmanship and attention to detail in every job.
       </p>
@@ -74,14 +74,14 @@
               class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               loading="lazy"
             />
-            <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+            <div class="absolute top-4 right-4 bg-sigma-emerald text-white px-3 py-1 rounded-full text-sm font-semibold">
               {project.category}
             </div>
           </div>
           <div class="p-6">
-            <h3 class="font-bold text-xl text-gray-800 mb-2">{project.title}</h3>
-            <p class="text-gray-600 mb-4">{project.description}</p>
-            <p class="text-sm text-gray-500">{project.date}</p>
+            <h3 class="font-bold text-xl text-sigma-charcoal mb-2">{project.title}</h3>
+            <p class="text-sigma-light-gray mb-4">{project.description}</p>
+            <p class="text-sm text-sigma-light-gray">{project.date}</p>
           </div>
         </div>
       {/each}

@@ -62,11 +62,11 @@
   $: currentProcess = activeTab === 'retail' ? retailProcess : insuranceProcess;
 </script>
 
-<section class="py-20 bg-white">
+<section class="py-20 bg-sigma-cream">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
-      <h2 class="font-bold text-4xl text-gray-800 mb-4">Our Process</h2>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      <h2 class="font-bold text-4xl text-sigma-charcoal mb-4">Our Process</h2>
+      <p class="text-xl text-sigma-light-gray max-w-2xl mx-auto">
         Our process is simple and contains only a few straightforward steps, designed to make your roofing project stress-free.
       </p>
     </div>
@@ -74,23 +74,23 @@
     <div class="w-full">
       <!-- Tab buttons -->
       <div class="flex justify-center mb-12">
-        <div class="inline-flex rounded-lg border-2 border-gray-200">
+        <div class="inline-flex rounded-lg border-2 border-sigma-light-gray">
           <button
             class="px-6 py-3 text-lg font-medium rounded-l-lg transition-colors"
-            class:bg-emerald-600={activeTab === 'retail'}
+            class:bg-sigma-emerald={activeTab === 'retail'}
             class:text-white={activeTab === 'retail'}
             class:bg-white={activeTab !== 'retail'}
-            class:text-gray-700={activeTab !== 'retail'}
+            class:text-sigma-charcoal={activeTab !== 'retail'}
             on:click={() => activeTab = 'retail'}
           >
             Retail Jobs
           </button>
           <button
             class="px-6 py-3 text-lg font-medium rounded-r-lg transition-colors"
-            class:bg-emerald-600={activeTab === 'insurance'}
+            class:bg-sigma-emerald={activeTab === 'insurance'}
             class:text-white={activeTab === 'insurance'}
             class:bg-white={activeTab !== 'insurance'}
-            class:text-gray-700={activeTab !== 'insurance'}
+            class:text-sigma-charcoal={activeTab !== 'insurance'}
             on:click={() => activeTab = 'insurance'}
           >
             Insurance Jobs
@@ -103,22 +103,22 @@
         {#each currentProcess as step, index}
           <div class="flex flex-col items-center relative">
             <!-- Process Card -->
-            <div class="bg-white border-2 border-emerald-200 hover:border-emerald-600 transition-all duration-300 hover:shadow-lg max-w-xs rounded-lg p-6 text-center">
-              <div class="w-16 h-16 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div class="bg-white border-2 border-gray-200 hover:border-sigma-emerald transition-all duration-300 hover:shadow-lg max-w-xs rounded-lg p-6 text-center">
+              <div class="w-16 h-16 bg-sigma-emerald rounded-full flex items-center justify-center mx-auto mb-4">
                 <svelte:component this={step.icon} size={24} class="text-white" />
               </div>
-              <h3 class="font-bold text-lg text-gray-800 mb-2">{step.title}</h3>
-              <p class="text-sm text-gray-600">{step.description}</p>
+              <h3 class="font-bold text-lg text-sigma-charcoal mb-2">{step.title}</h3>
+              <p class="text-sm text-sigma-light-gray">{step.description}</p>
             </div>
             
             <!-- Arrow (hidden on last item) -->
             {#if index < currentProcess.length - 1}
               <div class="hidden lg:block absolute -right-8 top-1/2 transform -translate-y-1/2">
-                <span class="text-2xl text-emerald-600">→</span>
+                <span class="text-2xl text-sigma-emerald">→</span>
               </div>
               <!-- Down arrow for mobile -->
               <div class="lg:hidden mt-4">
-                <span class="text-2xl text-emerald-600">↓</span>
+                <span class="text-2xl text-sigma-emerald">↓</span>
               </div>
             {/if}
           </div>

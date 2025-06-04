@@ -45,46 +45,46 @@
   ];
 </script>
 
-<section class="py-20 bg-white">
+<section class="py-20 bg-sigma-cream">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
-      <h2 class="font-bold text-4xl text-gray-800 mb-4">What Our Customers Say</h2>
-      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+      <h2 class="font-bold text-4xl text-sigma-charcoal mb-4">What Our Customers Say</h2>
+      <p class="text-xl text-sigma-light-gray max-w-2xl mx-auto">
         Here are just some of our absolutely satisfied customers who have experienced our professional roofing services.
       </p>
       <div class="mt-4 flex items-center justify-center space-x-4">
         <div class="flex items-center">
-          <div class="flex text-emerald-600">
+          <div class="flex text-sigma-emerald">
             {#each Array(5) as _, i}
               <Star size={20} class="fill-current" />
             {/each}
           </div>
-          <span class="ml-2 font-semibold text-gray-800">5.0 Star Rating</span>
+          <span class="ml-2 font-semibold text-sigma-charcoal">5.0 Star Rating</span>
         </div>
       </div>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {#each reviews as review}
-        <div class="bg-white shadow-lg hover:shadow-xl transition-shadow border-l-4 border-l-emerald-600 rounded-lg p-8">
+        <div class="bg-white shadow-lg hover:shadow-xl transition-shadow border-l-4 border-l-sigma-emerald rounded-lg p-8">
           <div class="flex items-center mb-4">
-            <div class="flex text-emerald-600 text-lg">
+            <div class="flex text-sigma-emerald text-lg">
               {#each Array(5) as _, i}
                 <Star size={20} class={i < review.rating ? "fill-current" : ""} />
               {/each}
             </div>
-            <span class="ml-2 text-sm text-gray-600">{review.date}</span>
+            <span class="ml-2 text-sm text-sigma-light-gray">{review.date}</span>
           </div>
-          <p class="text-gray-600 mb-6 italic">
+          <p class="text-sigma-light-gray mb-6 italic">
             "{review.review}"
           </p>
           <div class="flex items-center">
-            <div class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center mr-4">
+            <div class="w-12 h-12 bg-sigma-emerald rounded-full flex items-center justify-center mr-4">
               <span class="text-white font-bold">{review.initials}</span>
             </div>
             <div>
-              <div class="font-semibold text-gray-800">{review.name}</div>
-              <div class="text-sm text-gray-600">{review.role}</div>
+              <div class="font-semibold text-sigma-charcoal">{review.name}</div>
+              <div class="text-sm text-sigma-light-gray">{review.role}</div>
             </div>
           </div>
         </div>

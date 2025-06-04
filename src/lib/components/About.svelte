@@ -4,7 +4,7 @@
   const visionImage = "https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600";
 </script>
 
-<section id="about" class="py-20 bg-emerald-600">
+<section id="about" class="py-20 bg-sigma-emerald">
   <div class="container mx-auto px-4">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <div>
