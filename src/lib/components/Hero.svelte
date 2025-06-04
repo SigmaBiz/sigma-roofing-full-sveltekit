@@ -9,6 +9,8 @@
   }
   
   const oklahomaFlagUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Flag_of_Oklahoma.svg/120px-Flag_of_Oklahoma.svg.png";
+  
+  const flagStyle = `opacity: 0.7; filter: brightness(1.3) contrast(1.2); aspect-ratio: 3/2;`;
 </script>
 
 <section 
@@ -19,7 +21,7 @@
     <div class="max-w-4xl mx-auto text-white text-center">
       <h1 class="font-bold text-4xl lg:text-6xl mb-6 leading-tight">
         <span class="text-white">Stand firm.</span>{" "}
-        <span class="text-sigma-emerald">Brave the storm.</span>{" "}
+        <span class="sigma-emerald">Brave the storm.</span>{" "}
         <span class="text-white">Serve with heart.</span>
       </h1>
       <p class="text-lg lg:text-xl mb-6 leading-relaxed text-gray-200 max-w-3xl mx-auto">
@@ -32,14 +34,14 @@
       </p>
       <div class="flex flex-col sm:flex-row justify-between space-y-4 sm:space-y-0 max-w-3xl mx-auto">
         <button
-          class="bg-sigma-emerald text-white hover:bg-emerald-600 text-lg px-8 py-4 shadow-lg transform hover:scale-105 transition-transform w-full sm:w-64 rounded-md font-medium flex items-center justify-center"
+          class="bg-emerald-600 text-white hover:bg-emerald-700 text-lg px-8 py-4 shadow-lg transform hover:scale-105 transition-transform w-full sm:w-64 rounded-md font-medium flex items-center justify-center"
           on:click={() => window.open("tel:(405)902-1826")}
         >
           <Phone size={20} class="mr-2" />
           Call (405) 902-1826
         </button>
         <button
-          class="bg-sigma-emerald text-white hover:bg-emerald-600 text-lg px-8 py-4 shadow-lg transform hover:scale-105 transition-transform w-full sm:w-64 rounded-md font-medium"
+          class="bg-emerald-600 text-white hover:bg-emerald-700 text-lg px-8 py-4 shadow-lg transform hover:scale-105 transition-transform w-full sm:w-64 rounded-md font-medium flex items-center justify-center"
           on:click={scrollToContact}
         >
           Free Estimate
@@ -51,7 +53,8 @@
           <img 
             src={oklahomaFlagUrl}
             alt="Oklahoma Flag" 
-            class="w-20 h-auto mb-2 rounded shadow-lg object-contain opacity-70"
+            class="w-20 h-auto mb-2 rounded shadow-lg object-contain"
+            style={flagStyle}
             loading="lazy"
           />
           <div class="text-sm text-gray-300 font-semibold">Operated</div>
@@ -60,7 +63,8 @@
           <img 
             src={oklahomaFlagUrl}
             alt="Oklahoma Flag" 
-            class="w-20 h-auto mb-2 rounded shadow-lg object-contain opacity-70"
+            class="w-20 h-auto mb-2 rounded shadow-lg object-contain"
+            style={flagStyle}
             loading="lazy"
           />
           <div class="text-sm text-gray-300 font-semibold">Founded</div>
@@ -69,7 +73,8 @@
           <img 
             src={oklahomaFlagUrl}
             alt="Oklahoma Flag" 
-            class="w-20 h-auto mb-2 rounded shadow-lg object-contain opacity-70"
+            class="w-20 h-auto mb-2 rounded shadow-lg object-contain"
+            style={flagStyle}
             loading="lazy"
           />
           <div class="text-sm text-gray-300 font-semibold">Licensed & Insured</div>

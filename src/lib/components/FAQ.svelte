@@ -85,8 +85,8 @@
 <section id="faq" class="py-20 bg-gray-50">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
-      <h2 class="font-bold text-4xl text-sigma-charcoal mb-4">Frequently Asked Questions</h2>
-      <p class="text-xl text-sigma-light-gray max-w-3xl mx-auto">
+      <h2 class="font-bold text-4xl text-gray-900 mb-4">Frequently Asked Questions</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
         Get answers to common questions about storm damage, insurance claims, and the roof repair process. 
         We believe in transparency and want you to feel confident every step of the way.
       </p>
@@ -99,14 +99,14 @@
             on:click={() => toggleItem(index)}
             class="w-full p-6 text-left flex justify-between items-start hover:bg-gray-50 transition-colors"
           >
-            <h3 class="font-semibold text-lg text-sigma-charcoal pr-4 leading-6">
+            <h3 class="font-semibold text-lg text-gray-900 pr-4 leading-6">
               {faq.question}
             </h3>
             <div class="flex-shrink-0 mt-1">
               {#if openItems.includes(index)}
-                <ChevronUp size={20} class="text-sigma-emerald" />
+                <ChevronUp size={20} class="text-emerald-600" />
               {:else}
-                <ChevronDown size={20} class="text-sigma-emerald" />
+                <ChevronDown size={20} class="text-emerald-600" />
               {/if}
             </div>
           </button>
@@ -114,7 +114,7 @@
           {#if openItems.includes(index)}
             <div class="px-6 pb-6 pt-0">
               <div class="border-t border-gray-100 pt-4">
-                <p class="text-sigma-light-gray leading-relaxed">
+                <p class="text-gray-600 leading-relaxed">
                   {faq.answer}
                 </p>
               </div>
@@ -124,16 +124,16 @@
       {/each}
     </div>
 
-    <div class="text-center mt-12 p-6 bg-gray-50 rounded-lg border-l-4 border-sigma-emerald">
-      <p class="text-sigma-charcoal font-medium mb-2">
+    <div class="text-center mt-12 p-6 bg-emerald-600/10 rounded-lg border-l-4 border-emerald-600">
+      <p class="text-gray-900 font-medium mb-2">
         Have a question not covered here?
       </p>
-      <p class="text-sigma-light-gray mb-4">
+      <p class="text-gray-600 mb-4">
         Every policy is different, and every home is unique. We approach each situation with fresh eyes and clear purpose — to help you get the best result possible based on what's real and what's right for your home.
       </p>
       <button 
         on:click={scrollToContact}
-        class="inline-flex items-center px-6 py-3 bg-sigma-emerald text-white font-semibold rounded-lg hover:bg-emerald-600 transition-colors"
+        class="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors"
       >
         Contact Us Today
       </button>

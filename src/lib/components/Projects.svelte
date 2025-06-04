@@ -54,11 +54,11 @@
   });
 </script>
 
-<section class="py-20 bg-sigma-charcoal">
+<section id="projects" class="py-20 bg-gray-900">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
       <h2 class="font-bold text-4xl text-white mb-4">Recent Projects</h2>
-      <p class="text-xl text-gray-200 max-w-2xl mx-auto">
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
         Take a look at some of our recent roofing projects across Oklahoma. 
         Quality craftsmanship and attention to detail in every job.
       </p>
@@ -66,25 +66,33 @@
     
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {#each projects as project}
-        <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
-          <div class="h-48 bg-gray-200 relative overflow-hidden">
+        <div class="bg-white overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 border-t-4 border-t-emerald-600 rounded-lg">
+          <div class="h-48 relative overflow-hidden">
             <img 
               src={project.image}
               alt={project.title}
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              class="w-full h-full object-cover"
               loading="lazy"
             />
-            <div class="absolute top-4 right-4 bg-sigma-emerald text-white px-3 py-1 rounded-full text-sm font-semibold">
-              {project.category}
-            </div>
           </div>
           <div class="p-6">
-            <h3 class="font-bold text-xl text-sigma-charcoal mb-2">{project.title}</h3>
-            <p class="text-sigma-light-gray mb-4">{project.description}</p>
-            <p class="text-sm text-sigma-light-gray">{project.date}</p>
+            <h3 class="font-bold text-xl text-gray-900 mb-2">{project.title}</h3>
+            <p class="text-gray-600 mb-4">{project.description}</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-green-600 font-semibold bg-green-500/10 px-3 py-1 rounded-full">{project.category}</span>
+              <button class="text-emerald-600 hover:text-emerald-700 text-sm font-medium">
+                View Details →
+              </button>
+            </div>
           </div>
         </div>
       {/each}
+    </div>
+    
+    <div class="text-center mt-12">
+      <button class="bg-emerald-600 text-white hover:bg-emerald-700 text-lg px-8 py-4 rounded-lg shadow-lg transition-colors">
+        View All Projects
+      </button>
     </div>
   </div>
 </section>
