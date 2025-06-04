@@ -1,6 +1,7 @@
 <script>
   import Hero from '$lib/components/Hero.svelte';
   import Services from '$lib/components/Services.svelte';
+  import Contact from '$lib/components/Contact.svelte';
   // We'll add more components as we migrate them
 </script>
 
@@ -11,6 +12,7 @@
 
 <Hero />
 <Services />
+<Contact />
 
 <!-- We'll add these components as we migrate them:
 <Process />
@@ -18,5 +20,4 @@
 <Projects />
 <Testimonials />
 <FAQ />
-<Contact /> This will be replaced with MVP3 contact form
 -->
