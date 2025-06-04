@@ -1,6 +1,14 @@
 <script>
   import { Phone } from 'lucide-svelte';
   import Button from './ui/Button.svelte';
+  import { imageService } from '$lib/services/imageService';
+  import { onMount } from 'svelte';
+  
+  let heroBackground = null;
+  
+  onMount(() => {
+    heroBackground = imageService.getImage('heroBackground');
+  });
   
   function scrollToContact() {
     const element = document.getElementById('contact');
@@ -16,7 +24,8 @@
 
 <section 
   id="home" 
-  class="relative min-h-screen flex items-center hero-bg"
+  class="relative min-h-screen flex items-center {heroBackground ? '' : 'hero-bg'}"
+  style={heroBackground ? `background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroBackground}); background-size: cover; background-position: center; background-repeat: no-repeat;` : ''}
 >
   <div class="container mx-auto px-4 relative z-10">
     <div class="max-w-4xl mx-auto text-white text-center">

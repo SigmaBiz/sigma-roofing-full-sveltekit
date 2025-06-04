@@ -1,7 +1,14 @@
 <script>
-  // For now, we'll use placeholder images
-  const teamPhoto = "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600";
-  const visionImage = "https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600";
+  import { imageService } from '$lib/services/imageService';
+  import { onMount } from 'svelte';
+  
+  let teamPhoto = '';
+  let visionImage = '';
+  
+  onMount(() => {
+    teamPhoto = imageService.getImage('teamPhoto');
+    visionImage = imageService.getImage('visionImage');
+  });
 </script>
 
 <section id="about" class="py-20 bg-emerald-600">

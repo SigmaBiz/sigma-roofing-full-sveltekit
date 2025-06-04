@@ -3,6 +3,7 @@
   import Input from '$lib/components/ui/Input.svelte';
   import Label from '$lib/components/ui/Label.svelte';
   import Button from '$lib/components/ui/Button.svelte';
+  import { toast } from '$lib/stores/toast';
   
   // Form data
   let firstName = '';
@@ -154,6 +155,7 @@
       
       if (response.ok) {
         successMessage = result.message;
+        toast.success('Form submitted successfully! Check your email for confirmation.');
         
         // Store data for Calendly
         const formData = { firstName, lastName, email, phone, address, serviceType };
@@ -181,7 +183,7 @@
         throw new Error(result.message || 'Submission failed');
       }
     } catch (error) {
-      alert('Error: ' + error.message);
+      toast.error('Error: ' + error.message);
     } finally {
       isSubmitting = false;
     }

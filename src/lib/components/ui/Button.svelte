@@ -1,4 +1,6 @@
 <script>
+  import { cn } from '$lib/utils';
+  
   export let variant = 'default';
   export let size = 'default';
   export let className = '';
@@ -24,7 +26,7 @@
     icon: "h-10 w-10"
   };
   
-  $: classes = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
+  $: classes = cn(baseClasses, variants[variant], sizes[size], className);
 </script>
 
 <button 

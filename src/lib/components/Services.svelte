@@ -1,6 +1,10 @@
 <script>
   import { onMount } from 'svelte';
   import { Home, PaintBucket, Hammer, ShieldCheck, Droplets, CloudRain, CheckCircle, Eye, Zap } from 'lucide-svelte';
+  import Card from '$lib/components/ui/Card.svelte';
+  import CardHeader from '$lib/components/ui/CardHeader.svelte';
+  import CardContent from '$lib/components/ui/CardContent.svelte';
+  import { imageService } from '$lib/services/imageService';
   
   const services = [
     {
@@ -53,15 +57,14 @@
     }
   ];
   
-  // Placeholder for service images - can be replaced with actual image URLs or an image service
   let serviceImages = {};
   let imagesLoaded = false;
   
   onMount(() => {
-    // Simulate image loading - replace this with actual image loading logic if needed
-    setTimeout(() => {
-      imagesLoaded = true;
-    }, 100);
+    // Load images from the image service
+    const allImages = imageService.getAllImages();
+    serviceImages = allImages;
+    imagesLoaded = true;
   });
   
   function scrollToContact() {
@@ -84,8 +87,8 @@
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {#if imagesLoaded}
         {#each services as service}
-          <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-l-emerald-600 overflow-hidden">
-            <!-- Image header (optional - remove if no images available) -->
+          <Card className="hover:shadow-xl transition-all duration-300 hover:scale-105 border-l-4 border-l-emerald-600 overflow-hidden">
+            <!-- Image header -->
             {#if serviceImages[service.imageKey]}
               <div class="h-48 overflow-hidden relative">
                 <img 
@@ -97,11 +100,14 @@
               </div>
             {/if}
             
-            <div class="p-8">
-              <div class="{service.iconColor} w-16 h-16 rounded-lg flex items-center justify-center mb-6 shadow-lg transform hover:scale-110 transition-transform duration-300">
+            <CardHeader className="pb-4">
+              <div class="{service.iconColor} w-16 h-16 rounded-lg flex items-center justify-center mb-4 shadow-lg transform hover:scale-110 transition-transform duration-300">
                 <svelte:component this={service.icon} class="text-white" size={32} />
               </div>
-              <h3 class="font-bold text-xl mb-4 text-gray-800">{service.title}</h3>
+              <h3 class="font-bold text-xl text-gray-800">{service.title}</h3>
+            </CardHeader>
+            
+            <CardContent>
               <p class="text-gray-600 mb-6">{service.description}</p>
               <ul class="text-sm text-gray-600 space-y-2 mb-6">
                 {#each service.features as feature}
@@ -117,21 +123,28 @@
               >
                 Get Help
               </button>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         {/each}
       {:else}
         <!-- Loading skeleton -->
         {#each Array(6) as _, i}
-          <div class="bg-white rounded-lg shadow-md border-l-4 border-l-emerald-600 overflow-hidden">
+          <Card className="border-l-4 border-l-emerald-600 overflow-hidden">
             <div class="h-48 bg-gray-200 animate-pulse"></div>
-            <div class="p-8">
-              <div class="w-16 h-16 bg-gray-200 animate-pulse rounded-lg mb-6"></div>
-              <div class="h-6 bg-gray-200 animate-pulse rounded mb-4"></div>
+            <CardHeader>
+              <div class="w-16 h-16 bg-gray-200 animate-pulse rounded-lg mb-4"></div>
+              <div class="h-6 bg-gray-200 animate-pulse rounded"></div>
+            </CardHeader>
+            <CardContent>
               <div class="h-4 bg-gray-200 animate-pulse rounded mb-2"></div>
-              <div class="h-4 bg-gray-200 animate-pulse rounded w-3/4"></div>
-            </div>
-          </div>
+              <div class="h-4 bg-gray-200 animate-pulse rounded w-3/4 mb-4"></div>
+              <div class="space-y-2">
+                <div class="h-3 bg-gray-200 animate-pulse rounded"></div>
+                <div class="h-3 bg-gray-200 animate-pulse rounded"></div>
+                <div class="h-3 bg-gray-200 animate-pulse rounded"></div>
+              </div>
+            </CardContent>
+          </Card>
         {/each}
       {/if}
     </div>
